@@ -57,11 +57,13 @@ const activeClick = () => {
         <!--End Sidebar-->
 
         <!--Start Sidebar-->
-        <div class="flex h-screen bg-gray-white 2xl:bg-gray-200 md:flex-col sm:flex-col">
+        <div
+            class="flex h-screen bg-gray-white 2xl:bg-gray-200 xl:flex-col-reverse lg:flex-col-reverse md:flex-col-reverse sm:flex-col-reverse -mt-24">
             <div
-                class="p-5 bg-gray-800 w-12 2xl:rounded-l-md fixed inset-y-0 right-0 2xl:rounded-r-md md:top-0 md:right-auto md:w-full md:h-12 sm:top-0 sm:right-auto sm:w-full sm:h-12">
-                <div class="shadow-md">
-                    <button @click="isOpen = !isOpen" class="2xl:hidden mb-2 sm:h-12 md:h-12 text-white -mt-12">
+                class="p-5 bg-gray-800 w-12 2xl:rounded-l-md fixed h-screen right-0 2xl:rounded-r-md md:top-0 md:right-auto md:w-full md:h-12 sm:top-0 sm:right-auto sm:w-full sm:h-12">
+                <div class="">
+                    <button @click="isOpen = !isOpen"
+                            class="2xl:hidden mb-2 sm:h-12 md:h-12 lg:hidden xl:hidden text-white -mt-12">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                              class="h-8 w-8 rounded z-50">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -94,8 +96,8 @@ const activeClick = () => {
                         <li class="hover:bg-gray-200 hover:rounded-full transition-all duration-200">
                             <a href="#" class="hover:text-black transition-all duration-200">
                                 <img alt="Avatar of Koel"
-                                             src="https://www.gravatar.com/avatar/819d10ab8d9d8d86dbe24cdb0bbd7d24?s=192&amp;d=robohash"
-                                             data-v-39881364="">
+                                     src="https://www.gravatar.com/avatar/819d10ab8d9d8d86dbe24cdb0bbd7d24?s=192&amp;d=robohash"
+                                     data-v-39881364="">
                             </a>
                         </li>
                     </ul>
@@ -109,6 +111,55 @@ const activeClick = () => {
             <content/>
         </div>
         <!--End Content-->
+
+        <!--Start Bottom Navigation-->
+        <div class="fixed bottom-0 left-0 z-50 w-full h-24 bg-gray-700 dark:bg-gray-700 dark:border-gray-600 shadow-xl text-white">
+            <div class="grid h-full w-full grid-cols-3 font-medium">
+                <div class="flex-1 p-5 flex items-center">
+                    <img src="https://tailwindcss.com/_next/static/media/full-stack-radio.afb14e4e.png" loading="lazy" decoding="async" alt="" class="flex-none rounded-lg bg-slate-100" width="65" height="65">
+                </div>
+                <div class="flex-1 p-5 flex justify-center items-center space-x-10">
+                    <button type="button" class="" aria-label="Previous">
+                        <svg width="24" height="24" fill="none">
+                            <path d="m10 12 8-6v12l-8-6Z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M6 6v12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </button>
+
+                    <button type="button" aria-label="Rewind 10 seconds">
+                        <svg width="24" height="24" fill="none">
+                            <path d="M6.492 16.95c2.861 2.733 7.5 2.733 10.362 0 2.861-2.734 2.861-7.166 0-9.9-2.862-2.733-7.501-2.733-10.362 0A7.096 7.096 0 0 0 5.5 8.226" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M5 5v3.111c0 .491.398.889.889.889H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="bg-white text-slate-900 transition-all duration-500 dark:bg-slate-100 dark:text-slate-700 flex-none -my-2 w-20 h-20 rounded-full ring-1 ring-slate-900/5 shadow-md flex items-center justify-center" aria-label="Pause">
+                        <svg width="30" height="32" fill="currentColor">
+                            <rect x="6" y="4" width="4" height="24" rx="2"></rect>
+                            <rect x="20" y="4" width="4" height="24" rx="2"></rect>
+                        </svg>
+                    </button>
+
+                    <button type="button" aria-label="Skip 10 seconds" class="">
+                        <svg width="24" height="24" fill="none">
+                            <path d="M17.509 16.95c-2.862 2.733-7.501 2.733-10.363 0-2.861-2.734-2.861-7.166 0-9.9 2.862-2.733 7.501-2.733 10.363 0 .38.365.711.759.991 1.176" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M19 5v3.111c0 .491-.398.889-.889.889H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="" aria-label="Next">
+                        <svg width="24" height="24" fill="none">
+                            <path d="M14 12 6 6v12l8-6Z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M18 6v12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="flex-1 p-5 flex justify-end items-center">
+
+                </div>
+            </div>
+        </div>
+        <!--End Bottom Navigation-->
     </div>
 </template>
 
