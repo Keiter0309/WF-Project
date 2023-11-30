@@ -1,7 +1,6 @@
 <template>
     <!--Start Sidebar-->
         <sidebar/>
-        <sidebar2/>
     <!--End Sidebar-->
 </template>
 
