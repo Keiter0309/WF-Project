@@ -1,19 +1,15 @@
 <template>
     <!--Start Sidebar-->
         <sidebar/>
+        <sidebar2/>
     <!--End Sidebar-->
-
-    <!--Start Content-->
-        <content/>
-    <!--End Content-->
-
-
 </template>
 
 <script setup>
 
 import Sidebar from "./sidebar.vue";
 import Content from "./content.vue";
+import Sidebar2 from "./sidebar-2.vue";
 </script>
 
 <style scoped>
