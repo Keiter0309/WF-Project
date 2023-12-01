@@ -7,8 +7,8 @@
 <script setup>
 
 import Sidebar from "./sidebar.vue";
-import Content from "./content.vue";
 import Sidebar2 from "./sidebar-2.vue";
+import HomeContent from "./homeContent.vue";
 </script>
 
 <style scoped>
