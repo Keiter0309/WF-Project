@@ -9,9 +9,7 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-<div id="registerPage">
-
-</div>
+<div id="registerPage"></div>
 @vite('resources/js/app.js')
 </body>
 </html>

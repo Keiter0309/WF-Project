@@ -5,6 +5,7 @@ import CurrentQueueContent from "./currentQueueContent.vue";
 import AllSongsContent from "./allSongsContent.vue";
 import AlbumsContent from "./albumsContent.vue";
 import ArtistContent from "./artistContent.vue";
+import FavouritesContent from "./favouritesContent.vue";
 
 const isOpen = ref(false);
 const activeItem = ref(null);
@@ -13,6 +14,7 @@ const showCurrentQueueContent = ref(false);
 const showAllSongsContent = ref(false);
 const showAlbumsContent = ref(false);
 const showArtistContent = ref(false);
+const showFavouritesContent = ref(false);
 
 const setActive = (item) => {
     activeItem.value = item;
@@ -21,7 +23,7 @@ const setActive = (item) => {
     showAllSongsContent.value = item === 'All Songs';
     showAlbumsContent.value = item === 'Albums';
     showArtistContent.value = item === 'Artist';
-
+    showFavouritesContent.value = item === 'Favourites';
     isOpen.value = false;
 }
 
@@ -104,7 +106,9 @@ const setActive = (item) => {
             <p class="text-white mt-5">Playlists</p>
             <ul class="mt-5 space-y-1 text-sm">
                 <li class="hover:bg-indigo-500 transition-all duration-150 ease-in-out rounded">
-                    <a href="#" class="p-3 text-white flex w-full">
+                    <a href="#" class="p-3 text-white flex w-full" @click="setActive('Favourites')"
+                       :class="{ 'before:absolute before:w-4 before:h-4 before:rounded-md before:bg-orange-200 before:-right-1 before:mr-1': activeItem === 'Favourites' }"
+                    >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                              class="h-5 w-5 mr-1 text-red-600">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -200,6 +204,7 @@ const setActive = (item) => {
             <all-songs-content v-if="showAllSongsContent"/>
             <albums-content v-if="showAlbumsContent"/>
             <artist-content v-if="showArtistContent"/>
+            <favourites-content v-if="showFavouritesContent"/>
         </div>
         <!--End Content in Sidebar-->
 

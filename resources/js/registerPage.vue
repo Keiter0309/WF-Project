@@ -1,4 +1,6 @@
 <script>
+import Form from "vform";
+
 export default {
 
     data () {
@@ -22,8 +24,10 @@ export default {
                     attr.innerHTML = response.data.message;
 
                     this.form.reset();
-
                 })
+                .catch(( error ) => {
+                    console.log(error);
+                });
         },
     }
 }
@@ -132,7 +136,6 @@ export default {
                                                :class="{ 'is-invalid': form.errors.has('username') }" name="username"
                                                class="w-full -ml-10 pl-10 pr-3 py-2 transition-all duration-200 ease-in-out rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                                placeholder="JohnSmith">
-                                        <has-error :form="form" field="username"></has-error>
                                     </div>
                                 </div>
                             </div>
@@ -147,7 +150,6 @@ export default {
                                                :class="{ 'is-invalid': form.errors.has('email') }" name="email"
                                                class="w-full -ml-10 pl-10 pr-3 py-2 transition-all duration-200 ease-in-out rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                                placeholder="johnsmith@example.com">
-                                        <has-error :form="form" field="email"></has-error>
                                     </div>
                                 </div>
                             </div>
@@ -162,7 +164,6 @@ export default {
                                                :class="{ 'is-invalid': form.errors.has('password') }" name="password"
                                                class="w-full -ml-10 pl-10 pr-3 py-2 transition-all duration-200 ease-in-out rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                                placeholder="************">
-                                        <has-error :form="form" field="password"></has-error>
                                     </div>
                                 </div>
                             </div>
@@ -178,16 +179,13 @@ export default {
                                                name="password_confirmation"
                                                class="w-full -ml-10 pl-10 pr-3 py-2 transition-all duration-200 ease-in-out rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                                placeholder="************">
-                                        <has-error :form="form" field="password_confirmation"></has-error>
                                     </div>
                                 </div>
                             </div>
                             <div class="flex -mx-3">
                                 <div class="w-full px-3 mb-5">
-                                    <button
-                                        class="block w-full max-w-xs mx-auto bg-indigo-500 hover:bg-indigo-700 hover:scale-105 transition-all duration-300 ease-in-out focus:bg-indigo-700 text-white rounded-lg px-3 py-3 font-semibold">
-                                        REGISTER NOW
-                                    </button>
+                                    <button type="submit"
+                                        class="transition delay-150 ease-in-out bg-blue-500 hover:bg-indigo-500 hover:-translate-y-1 hover:scale-105 duration-300 rounded p-3 text-white w-full uppercase">register</button>
                                 </div>
                             </div>
                         </div>
