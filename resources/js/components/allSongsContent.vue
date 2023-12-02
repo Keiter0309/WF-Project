@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="flex-1 p-5 text-center text-white">
+    <div class="flex-1 p-5 text-center text-white sm:mt-5 md:mt-5">
         This is the all songs content
     </div>
 </template>
