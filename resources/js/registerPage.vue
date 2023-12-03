@@ -3,10 +3,10 @@ import Form from "vform";
 
 export default {
 
-    data () {
+    data() {
         return {
             form: new Form({
-                username: '',
+                name: '',
                 email: '',
                 password: '',
                 password_confirmation: '',
@@ -16,18 +16,15 @@ export default {
 
     methods: {
 
-        register () {
+        register() {
             this.form.post('/register')
-                .then(( response ) => {
+                .then((response) => {
 
                     let attr = document.getElementById("text");
                     attr.innerHTML = response.data.message;
 
                     this.form.reset();
                 })
-                .catch(( error ) => {
-                    console.log(error);
-                });
         },
     }
 }
@@ -132,8 +129,8 @@ export default {
                                         <div
                                             class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                             <i class="mdi mdi-account-outline text-gray-400 text-lg"></i></div>
-                                        <input type="text" v-model="form.username"
-                                               :class="{ 'is-invalid': form.errors.has('username') }" name="username"
+                                        <input type="text" v-model="form.name" id="name"
+                                               :class="{ 'is-invalid': form.errors.has('name') }" name="name"
                                                class="w-full -ml-10 pl-10 pr-3 py-2 transition-all duration-200 ease-in-out rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                                placeholder="JohnSmith">
                                     </div>
@@ -146,7 +143,7 @@ export default {
                                         <div
                                             class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                             <i class="mdi mdi-email-outline text-gray-400 text-lg"></i></div>
-                                        <input type="email" v-model="form.email"
+                                        <input type="email" v-model="form.email" id="email"
                                                :class="{ 'is-invalid': form.errors.has('email') }" name="email"
                                                class="w-full -ml-10 pl-10 pr-3 py-2 transition-all duration-200 ease-in-out rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                                placeholder="johnsmith@example.com">
@@ -160,7 +157,7 @@ export default {
                                         <div
                                             class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                             <i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
-                                        <input type="password" v-model="form.password"
+                                        <input type="password" v-model="form.password" id="password"
                                                :class="{ 'is-invalid': form.errors.has('password') }" name="password"
                                                class="w-full -ml-10 pl-10 pr-3 py-2 transition-all duration-200 ease-in-out rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
                                                placeholder="************">
@@ -175,6 +172,7 @@ export default {
                                             class="w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
                                             <i class="mdi mdi-lock-outline text-gray-400 text-lg"></i></div>
                                         <input type="password" v-model="form.password_confirmation"
+                                               id="password_confirm"
                                                :class="{ 'is-invalid': form.errors.has('password_confirmation') }"
                                                name="password_confirmation"
                                                class="w-full -ml-10 pl-10 pr-3 py-2 transition-all duration-200 ease-in-out rounded-lg border-2 border-gray-200 outline-none focus:border-indigo-500"
@@ -185,7 +183,9 @@ export default {
                             <div class="flex -mx-3">
                                 <div class="w-full px-3 mb-5">
                                     <button type="submit"
-                                        class="transition delay-150 ease-in-out bg-blue-500 hover:bg-indigo-500 hover:-translate-y-1 hover:scale-105 duration-300 rounded p-3 text-white w-full uppercase">register</button>
+                                            class="transition delay-150 ease-in-out bg-blue-500 hover:bg-indigo-500 hover:-translate-y-1 hover:scale-105 duration-300 rounded p-3 text-white w-full uppercase">
+                                        register
+                                    </button>
                                 </div>
                             </div>
                         </div>
