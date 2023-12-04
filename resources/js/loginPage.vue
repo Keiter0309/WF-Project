@@ -1,9 +1,46 @@
-<script setup>
+<script>
+import { createApp } from 'vue';
+import axios from 'axios';
 
-import Form from "vform";
+export default {
+    data () {
+        return {
+            result: {},
+            form:{
+                email: '',
+                password: ''
+            }
+        }
+    },
+    created() {
+    },
+    mounted() {
+        console.log("mounted() called.......");
+    },
+    methods: {
+        LoginData()
+        {
+            axios.post("http://127.0.0.1:8000/api/login", this.form)
+                .then(
+                    ({data})=>{
+                        console.log(data);
+                        try {
+                            if (data.status === true) {
+                                alert("Login Successfully");
+                            } else {
+                                alert("Login failed")
+                            }
 
-
+                        } catch (err) {
+                            alert("Error, please try again");
+                        }
+                    }
+                )
+        }
+    }
+}
 </script>
+
 
 <template>
     <section class="min-h-screen flex items-stretch text-white ">
@@ -41,12 +78,12 @@ import Form from "vform";
                 <p class="text-gray-100">
                     or use email your account
                 </p>
-                <form action="" class="sm:w-2/3 w-full px-4 2xl:px-0 mx-auto" @submit.prevent="login">
+                <form action="" class="sm:w-2/3 w-full px-4 2xl:px-0 mx-auto" @submit.prevent="LoginData">
                     <div class="pb-2 pt-4">
-                        <input type="email" v-model="form.email" name="email" id="email" placeholder="Email" class=" w-1/2 p-4 text-lg rounded-md bg-black transition-all duration-150 ease-in-out" :class="{ 'is-invalid': form.errors.has('email') }">
+                        <input type="email" v-model="form.email" name="email" id="email" placeholder="Email" class=" w-1/2 p-4 text-lg rounded-md bg-black transition-all duration-150 ease-in-out">
                     </div>
                     <div class="pb-2 pt-4">
-                        <input v-model="form.password" class="w-1/2 p-4 text-lg rounded-md bg-black transition-all duration-150 ease-in-out" type="password" name="password" id="password" placeholder="Password" :class="{ 'is-invalid': form.errors.has('password')}">
+                        <input v-model="form.password" class="w-1/2 p-4 text-lg rounded-md bg-black transition-all duration-150 ease-in-out" type="password" name="password" id="password" placeholder="Password">
                     </div>
                     <div class="text-gray-400 hover:underline hover:text-gray-100 transition-all duration-150 ease-in-out">
                         <a href="#">Forgot your password?</a>

@@ -2,9 +2,7 @@
     <home></home>
 </template>
 <script>
-
-    import Home from "./components/home.vue";
-
+    import Home from './components/Home.vue';
     export default {
         components: {Home}
     }

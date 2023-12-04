@@ -2,7 +2,7 @@
 import Form from "vform";
 
 export default {
-
+    name: "registerPage",
     data() {
         return {
             form: new Form({
