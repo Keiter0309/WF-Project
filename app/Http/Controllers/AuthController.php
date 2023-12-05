@@ -16,7 +16,7 @@ class AuthController extends Controller
         User::create([
             'name' => $input['name'],
             'email' => $input['email'],
-            'password' => bcrypt($input['password']),
+            'password' => Hash::make($input['password']),
         ]);
 
         return response()->json(['status' => true,

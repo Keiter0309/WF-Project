@@ -24,6 +24,7 @@ export default {
                 .then(
                     ({data})=>{
                         console.log(data);
+                        console.log(`email: ${this.form.email} password: ${this.form.password}`);
                         try {
                             if (data.status === true) {
                                 alert("Login Successfully");
@@ -40,8 +41,6 @@ export default {
     }
 }
 </script>
-
-
 <template>
     <section class="min-h-screen flex items-stretch text-white ">
         <div class="2xl:flex w-1/2 hidden bg-gray-500 bg-no-repeat bg-cover relative items-center" style="background-image: url(https://images.unsplash.com/photo-1577495508048-b635879837f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80);">

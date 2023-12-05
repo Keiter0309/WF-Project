@@ -31,3 +31,7 @@ Route::post('/register', [AuthController::class, 'register']);
 
 Route::get('/music', [MusicController::class, 'getMusicList']);
 Route::post('music/play', [MusicController::class, 'playMusic']);
+
+Route::get('/test', function() {
+   return view('test');
+});

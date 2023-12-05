@@ -8,8 +8,9 @@
     </div>
     <hr>
     <div class="grid grid-cols-2 gap-4">
-        <div class="flex-1 p-5 text-white">
+        <div class="flex-auto p-5 text-white">
             <h1 class="text-xl text-center">Most played</h1>
+            <div class="bg-white text-2xl text-red-500 font-semibold">Hello</div>
         </div>
         <div class="flex-1 p-5 text-white">
             <h1 class="text-xl text-center">Recently</h1>

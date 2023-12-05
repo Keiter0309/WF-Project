@@ -33,7 +33,7 @@ const setActive = (item) => {
     <!--Start Sidebar-->
     <div class="flex h-screen bg-gray-900">
         <div
-            class="p-5 bg-gray-800 w-64 fixed inset-y-0 left-0 transform -translate-x-full 2xl:translate-x-0 sm:mt-12 md:mt-12 2xl:transition-transform duration-200 ease-in-out 2xl:ease-none overflow-auto 2xl:overflow-visible 2xl:rounded-r-md"
+            class="p-5 bg-gray-800 w-64 2xl:sticky xl:fixed lg:fixed md:fixed sm:fixed h-screen md:inset-y-0 sm:inset-y-0 left-0 transform -translate-x-full 2xl:translate-x-0 sm:mt-12 md:mt-12 2xl:transition-transform duration-200 ease-in-out 2xl:ease-none overflow-auto 2xl:overflow-visible 2xl:rounded-r-md"
             :class="{'translate-x-0 ease-out w-full': isOpen}">
             <div>
                 <input type="text" placeholder="Press F to search"
@@ -198,7 +198,7 @@ const setActive = (item) => {
         <!--End Sidebar-->
 
         <!--Start Content in Sidebar-->
-        <div class="flex-1 p-5">
+        <div class="flex-auto p-5">
             <home-content v-if="showHomeContent"/>
             <current-queue-content v-if="showCurrentQueueContent"/>
             <all-songs-content v-if="showAllSongsContent"/>
@@ -265,9 +265,6 @@ const setActive = (item) => {
                                   stroke-linejoin="round"></path>
                         </svg>
                     </button>
-                </div>
-                <div class="flex-1 p-5 flex justify-end items-center">
-
                 </div>
             </div>
         </div>
